@@ -9,6 +9,7 @@ import {
   useToast,
 } from '@chakra-ui/react'
 import {
+  Beers as BeersIcon,
   DiceFive,
   DiceFour,
   DiceOne,
@@ -98,8 +99,10 @@ const RollDice: React.FC = () => {
         justifyContent="center"
         alignItems="center">
         <Box d="flex" justifyContent="center" alignItems="center">
+          <BeersIcon w="55px" h="55px" />
           <Heading
             as="h1"
+            ml="8px"
             textTransform="uppercase"
             fontSize="30px"
             color="white">

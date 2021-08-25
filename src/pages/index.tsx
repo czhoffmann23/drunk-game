@@ -66,12 +66,12 @@ const Index: React.FC = () => {
     <Container>
       <Flex w="100%" h="100%" justifyContent="center" alignItems="center">
         <Flex flexDir="column" flex="1" h="100%">
-          <Box h="100%" m="10px" flex="1" p="10px">
+          <Box h={{ base: '100%', sm: '50%' }} m="10px" flex="1" p="10px">
             <RollDice />
           </Box>
           <Box
             bg="#2E1F55"
-            h="100%"
+            h={{ base: '100%', sm: '50%' }}
             m="10px"
             flex="1"
             borderRadius="20px"
