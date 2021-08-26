@@ -12,6 +12,7 @@ type Game = {
   desc: string
   dice: boolean
   type: number
+  random: string[]
 }
 
 const Index: React.FC = () => {

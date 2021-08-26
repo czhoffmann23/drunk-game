@@ -71,7 +71,7 @@ const Board: React.FC<BoardProps> = ({ board }) => {
                       <Box
                         m="10px"
                         w="14%"
-                        h="80px"
+                        h="60px"
                         d="flex"
                         justifyContent="center"
                         alignItems="center"
@@ -84,7 +84,7 @@ const Board: React.FC<BoardProps> = ({ board }) => {
                       <Box
                         m="10px"
                         w="14%"
-                        h="80px"
+                        h="60px"
                         border="2px solid rgba(149, 120, 223, 0.2)"
                         borderRadius="16px"
                         d="flex"
@@ -99,17 +99,17 @@ const Board: React.FC<BoardProps> = ({ board }) => {
                         key={`${indexG + 1}`}>
                         {g.type === 2 ? (
                           <Box d="flex" flexDir="column" alignItems="center">
-                            <FireIcon w="35px" h="35px" />
+                            <FireIcon w="25px" h="25px" />
                             <Heading
                               marginTop="5px"
                               color="white"
-                              fontSize="16px">
+                              fontSize="13px">
                               SHOT
                             </Heading>
                           </Box>
                         ) : (
                           <Text
-                            fontSize="13px"
+                            fontSize="10px"
                             color="white"
                             textAlign="center"
                             fontWeight="bold"

@@ -59,17 +59,17 @@ const RollDice: React.FC = () => {
   const renderCase = (num: number) => {
     switch (num) {
       case 1:
-        return <DiceOne w="84px" h="84px" />
+        return <DiceOne w="80px" h="80px" />
       case 2:
-        return <DiceTwo w="84px" h="84px" />
+        return <DiceTwo w="80px" h="80px" />
       case 3:
-        return <DiceThree w="84px" h="84px" />
+        return <DiceThree w="80px" h="80px" />
       case 4:
-        return <DiceFour w="84px" h="84px" />
+        return <DiceFour w="80px" h="80px" />
       case 5:
-        return <DiceFive w="84px" h="84px" />
+        return <DiceFive w="80px" h="80px" />
       default:
-        return <DiceSix w="84px" h="84px" />
+        return <DiceSix w="80px" h="80px" />
     }
   }
 
@@ -104,7 +104,7 @@ const RollDice: React.FC = () => {
             as="h1"
             ml="8px"
             textTransform="uppercase"
-            fontSize="30px"
+            fontSize="25px"
             color="white">
             DRUNK APP
           </Heading>
@@ -116,20 +116,26 @@ const RollDice: React.FC = () => {
           {players && players[round] && players[round].name}
         </Heading>
       </Box>
-      <Box flex="4" d="flex" justifyContent="center" alignItems="center">
+      <Box
+        flex="4"
+        p="10px 0"
+        d="flex"
+        justifyContent="center"
+        alignItems="center">
         <Box
           w="100%"
-          h="160px"
+          h="95%"
+          minH="90px"
           m="10px 0"
-          borderRadius="30px"
+          borderRadius="20px"
           bg="#FF7888"
           d="flex"
           justifyContent="center"
           alignItems="center">
           <Box
             w="90%"
-            h="140px"
-            borderRadius="30px"
+            h="90%"
+            borderRadius="20px"
             bg="linear-gradient(180deg, #EC5566 0%, rgba(255, 120, 136, 0) 100%);"
             filter="drop-shadow(0px 4px 24px rgba(149, 120, 223, 0.2))"
             d="flex"

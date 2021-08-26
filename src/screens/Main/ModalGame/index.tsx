@@ -1,3 +1,4 @@
+import { useEffect, useState } from 'react'
 import {
   Box,
   Button,
@@ -18,6 +19,7 @@ type Game = {
   desc: string
   dice: boolean
   type: number
+  random: string[]
 }
 
 type ModalGameProps = {
@@ -28,6 +30,7 @@ type ModalGameProps = {
 
 const ModalGame: React.FC<ModalGameProps> = ({ game, isOpen, onClose }) => {
   const theme = useTheme()
+  const [getRandom, setGetRandom] = useState<string>('')
   const bgColor =
     game && game.type === 2
       ? theme.colors.orange.normal
@@ -37,6 +40,14 @@ const ModalGame: React.FC<ModalGameProps> = ({ game, isOpen, onClose }) => {
   const renderIcon = () => {
     if (game && game.type === 2) return <FireIcon w="150px" h="150px" />
   }
+
+  useEffect(() => {
+    if (game && game.random.length > 0) {
+      const totalRandom = game.random.length
+      const rand = Math.floor(Math.random() * totalRandom)
+      setGetRandom(game.random[rand])
+    }
+  }, [game])
   return (
     <Modal
       closeOnOverlayClick={false}
@@ -65,6 +76,20 @@ const ModalGame: React.FC<ModalGameProps> = ({ game, isOpen, onClose }) => {
             <Text mt="10px" fontSize="20px" textAlign="center" color={txtColor}>
               {game && game.desc}
             </Text>
+
+            {getRandom !== '' && (
+              <>
+                <br />
+                <Text
+                  mt="20px"
+                  color={txtColor}
+                  fontSize="20px"
+                  fontWeight="bold"
+                  textAlign="center">
+                  {game && game.random.length > 0 && getRandom}
+                </Text>
+              </>
+            )}
           </Box>
         </ModalBody>
         <ModalFooter d="flex" justifyContent="center" alignItems="center">
