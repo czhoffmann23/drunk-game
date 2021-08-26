@@ -12,6 +12,7 @@ import {
   useTheme,
 } from '@chakra-ui/react'
 import { Fire as FireIcon } from 'assets/svg'
+import { useGame } from 'providers/Game'
 
 type Game = {
   active: boolean
@@ -29,6 +30,7 @@ type ModalGameProps = {
 }
 
 const ModalGame: React.FC<ModalGameProps> = ({ game, isOpen, onClose }) => {
+  const { players, round } = useGame()
   const theme = useTheme()
   const [getRandom, setGetRandom] = useState<string>('')
   const bgColor =
@@ -64,10 +66,21 @@ const ModalGame: React.FC<ModalGameProps> = ({ game, isOpen, onClose }) => {
             alignItems="center"
             flexDir="column">
             {renderIcon()}
+
             <Heading
               as="h1"
               textTransform="uppercase"
               fontSize={{ base: '40px', md: '60px' }}
+              textAlign="center"
+              color="white">
+              {players && players[round] && `🔥 ${players[round].name} 🔥`}
+            </Heading>
+
+            <Heading
+              as="h1"
+              mt="50px"
+              textTransform="uppercase"
+              fontSize={{ base: '20px', md: '40px' }}
               textAlign="center"
               color="white">
               {game && game.name}
