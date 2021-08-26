@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react'
-import { Box, Flex, Heading, Slide } from '@chakra-ui/react'
+import { Box, Flex, Heading, Slide, Text } from '@chakra-ui/react'
 import { useGame } from 'providers/Game'
 import { Board, ModalGame, Players, RollDice } from 'screens/Main'
 import { BOARD_1 } from 'screens/Main/constant'
@@ -78,6 +78,11 @@ const Index: React.FC = () => {
             borderRadius="20px"
             p="10px">
             <Players />
+          </Box>
+          <Box flex="1">
+            <Text mt="5px" fontSize="11px" textAlign="center" color="white">
+              Power by: {`Un grupo de curaos 🥴🍻`}
+            </Text>
           </Box>
         </Flex>
         <Box

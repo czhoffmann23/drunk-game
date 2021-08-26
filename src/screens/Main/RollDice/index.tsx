@@ -109,6 +109,7 @@ const RollDice: React.FC = () => {
             DRUNK APP
           </Heading>
         </Box>
+
         <Text mt="10px" fontSize="18px" color="white">
           Es el turno de
         </Text>
