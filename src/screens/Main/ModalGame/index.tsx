@@ -50,6 +50,7 @@ const ModalGame: React.FC<ModalGameProps> = ({ game, isOpen, onClose }) => {
       setGetRandom(game.random[rand])
     }
   }, [game])
+
   return (
     <Modal
       closeOnOverlayClick={false}
@@ -61,35 +62,33 @@ const ModalGame: React.FC<ModalGameProps> = ({ game, isOpen, onClose }) => {
         <ModalBody>
           <Box
             minH="300px"
+            p="20px 0"
             d="flex"
             justifyContent="center"
             alignItems="center"
             flexDir="column">
-            {renderIcon()}
-
             <Heading
               as="h1"
               textTransform="uppercase"
+              mb="20px"
               fontSize={{ base: '40px', md: '60px' }}
               textAlign="center"
               color="white">
               {players && players[round] && `🔥 ${players[round].name} 🔥`}
             </Heading>
 
+            {renderIcon()}
             <Heading
               as="h1"
-              mt="50px"
               textTransform="uppercase"
               fontSize={{ base: '20px', md: '40px' }}
               textAlign="center"
               color="white">
               {game && game.name}
             </Heading>
-
             <Text mt="10px" fontSize="20px" textAlign="center" color={txtColor}>
               {game && game.desc}
             </Text>
-
             {getRandom !== '' && (
               <>
                 <br />
@@ -106,7 +105,12 @@ const ModalGame: React.FC<ModalGameProps> = ({ game, isOpen, onClose }) => {
           </Box>
         </ModalBody>
         <ModalFooter d="flex" justifyContent="center" alignItems="center">
-          <Button w="80%" colorScheme="purple" mr={3} onClick={onClose}>
+          <Button
+            w="80%"
+            marginBottom="20px"
+            colorScheme="purple"
+            mr={3}
+            onClick={onClose}>
             Siguiente
           </Button>
         </ModalFooter>

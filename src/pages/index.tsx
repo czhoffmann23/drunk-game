@@ -81,7 +81,7 @@ const Index: React.FC = () => {
           </Box>
           <Box flex="1">
             <Text mt="5px" fontSize="11px" textAlign="center" color="white">
-              Power by: {`Un grupo de curaos 🥴🍻`}
+              Powered by: {`Un grupo de curaos 🥴🍻`}
             </Text>
           </Box>
         </Flex>
