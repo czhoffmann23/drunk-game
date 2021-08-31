@@ -27,7 +27,7 @@ const BOARD_1 = [
       random: [],
     },
     {
-      name: 'No parpadear',
+      name: 'No parpadear 👀',
       desc: 'Compite contra el jugador de tu derecha quien puede aguantar mas sin parpadear ganará o perderá... depende como lo veas 🧐',
       dice: false,
       type: 4,
@@ -36,7 +36,7 @@ const BOARD_1 = [
     },
     {
       name: 'Vocales',
-      desc: 'Cada jugador deberá tomar por cada vocal existente en su nombre. Ej: Ana (2 vocales)',
+      desc: 'Todos juegan ! Cada jugador deberá tomar por cada vocal existente en su nombre. Ej: Ana (2 vocales)',
       dice: false,
       type: 4,
       active: false,
@@ -44,7 +44,7 @@ const BOARD_1 = [
     },
     {
       name: 'Juego del 7',
-      desc: 'Cuenta del 1 al infinito sin decir digitos que tengan el 7 o multiplos del mismo. Ejem. 1,2,3,4,5,6,8.....13,15,16. Quien se equivoque deberá tomar.',
+      desc: 'Todos juegan! Cuenta del 1 al infinito sin decir digitos que tengan el 7 o multiplos del mismo. Recuerda debes aplaudir por cada número que aparezca Ejem. 1,2,3,4,5,6,Aplaudir, 8...20, Aplaudir, 22,23...',
       dice: false,
       type: 4,
       active: false,
@@ -63,7 +63,7 @@ const BOARD_1 = [
     { name: '2', desc: '', dice: true, type: 1, active: false, random: [] },
     {
       name: 'Gallito Ingles',
-      desc: 'Atrapa el pulgar del jugador de tu derecha, quien pierda deberá tomar.',
+      desc: 'Todos juegan! Atrapa el pulgar del jugador de tu derecha, quien pierda deberá tomar.',
       dice: false,
       type: 4,
       active: false,
@@ -78,8 +78,8 @@ const BOARD_1 = [
       random: [],
     },
     {
-      name: 'El piso es Lava',
-      desc: 'Grita el PISO ES LAVA!. El último en salir del piso debe tomar',
+      name: 'El piso es Lava 🌋',
+      desc: 'Grita el PISO ES LAVA!. El último que deje de tocar el piso deberá tomar',
       dice: false,
       type: 4,
       active: false,
@@ -124,7 +124,7 @@ const BOARD_1 = [
   [
     { name: '3', desc: '', dice: true, type: 1, active: false, random: [] },
     {
-      name: 'Cultura Chupistica',
+      name: 'Cultura 🏛',
       desc: 'La cultura chupistica pide',
       dice: false,
       type: 4,
@@ -147,7 +147,7 @@ const BOARD_1 = [
     },
     {
       name: 'Ropa color',
-      desc: 'Toma por cada prenda (🩴 🧦 👕 👠) que tengas del color:',
+      desc: 'Toma por cada prenda (🧦 👕 👠) que tengas del color:',
       dice: false,
       type: 4,
       active: false,
@@ -187,7 +187,7 @@ const BOARD_1 = [
       ],
     },
     {
-      name: 'Andale',
+      name: 'Andale 🌮',
       desc: 'Aun nose como se juega...',
       dice: false,
       type: 4,
@@ -239,7 +239,7 @@ const BOARD_1 = [
       random: [],
     },
     {
-      name: 'Celular',
+      name: 'Celular 📞',
       desc: 'Los jugadores con celulares de esta marca debera beber:',
       dice: false,
       type: 4,
@@ -277,7 +277,7 @@ const BOARD_1 = [
       ],
     },
     {
-      name: 'Regla',
+      name: 'Regla ⚡',
       desc: 'Inventa una regla para el resto, cada vez que esta se rompa deberan beber todos!',
       dice: false,
       type: 4,
@@ -286,14 +286,14 @@ const BOARD_1 = [
     },
     {
       name: 'Chancho Inflao',
-      desc: 'Creo que no necesito explicarlo.',
+      desc: 'Puedes inflar el chancho en cualquier ronda, pero recuerda el ultimo en inflarse debera tomar.',
       dice: false,
       type: 4,
       active: false,
       random: [],
     },
     {
-      name: 'Farol',
+      name: 'Farol 💣',
       desc: 'Ese farol no alumbra...',
       dice: false,
       type: 4,
@@ -309,21 +309,12 @@ const BOARD_1 = [
       random: [],
     },
     {
-      name: 'MAS',
-      desc: '🍷',
+      name: 'Limón-Melón 🍋🍈',
+      desc: 'Comienza con "Un limón, medio limón dos limones", el de tu derecha deberá seguir con "Dos limones, medio limón tres limones", y asi sucesivamente...',
       dice: false,
       type: 4,
       active: false,
-      random: [
-        'Le + joven toma',
-        'Le + poton/a toma',
-        'Le + viejo/a toma',
-        'Le + ciego/a toma',
-        'Le + rusio/a toma',
-        'Le + pesado/a toma',
-        'Le + bromista toma',
-        'Le + nerd toma',
-      ],
+      random: [],
     },
   ],
   [
@@ -337,7 +328,7 @@ const BOARD_1 = [
       random: [],
     },
     {
-      name: 'Cultura chupistica',
+      name: 'Cultura 🏛',
       desc: 'La cultura chupistica pide:',
       dice: false,
       type: 4,
@@ -376,7 +367,7 @@ const BOARD_1 = [
       ],
     },
     {
-      name: 'Cultura chupistica',
+      name: 'Cultura 🏛',
       desc: 'La cultura chupistica pide:',
       dice: false,
       type: 4,
@@ -398,7 +389,7 @@ const BOARD_1 = [
       ],
     },
     {
-      name: 'Andale',
+      name: 'Andale 🌮',
       desc: 'Aun nose como se juega...',
       dice: false,
       type: 4,
