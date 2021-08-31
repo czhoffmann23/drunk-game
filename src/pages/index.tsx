@@ -100,7 +100,7 @@ const Index: React.FC = () => {
                     fontSize="11px"
                     textAlign="center"
                     color="white">
-                    Powered by: {`Un grupo de curaos 🥴🍻`}
+                    {`By: Jellyfish & Pilyclix 👽 / Author: Ellalabuscona ⚡`}
                   </Text>
                 </Box>
               </Flex>
