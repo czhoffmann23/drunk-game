@@ -100,7 +100,7 @@ const Index: React.FC = () => {
                     fontSize="11px"
                     textAlign="center"
                     color="white">
-                    {`By: Jellyfish & Pilyclix 👽 / Author: Ellalabuscona ⚡`}
+                    {`By: Pilyclix 👽 Ellalabuscona ⚡ Jellyfish 🌊`}
                   </Text>
                 </Box>
               </Flex>
