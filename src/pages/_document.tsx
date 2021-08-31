@@ -7,7 +7,7 @@ export default class Document extends NextDocument {
     return (
       <Html>
         <Head>
-          <title>Drunk Game</title>
+          <title>Bafu Game</title>
         </Head>
         <body>
           {/* Make Color mode to persists when you refresh the page. */}

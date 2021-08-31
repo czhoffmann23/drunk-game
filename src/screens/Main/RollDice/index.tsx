@@ -106,7 +106,7 @@ const RollDice: React.FC = () => {
             textTransform="uppercase"
             fontSize="25px"
             color="white">
-            DRUNK APP
+            BAFU GAME
           </Heading>
         </Box>
 
