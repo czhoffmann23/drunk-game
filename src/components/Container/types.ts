@@ -1,5 +1,5 @@
 export type ContainerProps = {
-  children: JSX.Element[]
+  children: JSX.Element
 }
 
 export type ContentProps = {

@@ -11,6 +11,8 @@
     "@chakra-ui/theme-tools": "1.1.2",
     "@emotion/react": "11.1.5",
     "@emotion/styled": "11.1.5",
+    "@fontsource/bungee": "^4.5.0",
+    "@fontsource/inter": "^4.5.0",
     "@fontsource/press-start-2p": "^4.5.0",
     "framer-motion": "^4.0.3",
     "next": "latest",

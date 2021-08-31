@@ -35,7 +35,7 @@ const theme = extendTheme({
     },
   },
   fonts: {
-    mono: 'Monospace',
+    body: 'Inter',
   },
   breakpoints,
 })

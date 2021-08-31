@@ -5,6 +5,11 @@
 html {
   height: 100%;
 }
+h1,
+h2,
+h3 {
+  font-family: 'Press Start 2P' !important;
+}
 body {
   height: 100%;
   overflow: hidden;

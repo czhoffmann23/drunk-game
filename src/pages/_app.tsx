@@ -6,6 +6,8 @@ import { GameProvider } from 'providers/Game'
 import Layout from '../layout'
 import theme from '../theme'
 
+import '@fontsource/inter/400.css'
+import '@fontsource/bungee/400.css'
 import '@fontsource/press-start-2p/400.css'
 import '../styles/index.css'
 

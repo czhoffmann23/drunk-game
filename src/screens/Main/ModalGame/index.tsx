@@ -86,7 +86,7 @@ const ModalGame: React.FC<ModalGameProps> = ({ game, isOpen, onClose }) => {
               as="h1"
               textTransform="uppercase"
               mb="20px"
-              fontSize={{ base: '40px', md: '60px' }}
+              fontSize={{ base: '20px', md: '30px' }}
               textAlign="center"
               color="white">
               {players && players[round] && `🔥 ${players[round].name} 🔥`}
@@ -97,9 +97,10 @@ const ModalGame: React.FC<ModalGameProps> = ({ game, isOpen, onClose }) => {
               <>
                 {renderIcon()}
                 <Heading
+                  mt="5px"
                   as="h1"
                   textTransform="uppercase"
-                  fontSize={{ base: '20px', md: '40px' }}
+                  fontSize={{ base: '20px', md: '30px' }}
                   textAlign="center"
                   color="white">
                   {game && game.name}
@@ -131,7 +132,8 @@ const ModalGame: React.FC<ModalGameProps> = ({ game, isOpen, onClose }) => {
         <ModalFooter d="flex" justifyContent="center" alignItems="center">
           <Button
             marginBottom="20px"
-            colorScheme="gray"
+            colorScheme="purple"
+            variant="outline"
             w="50%"
             mr={3}
             onClick={onRepeat}>

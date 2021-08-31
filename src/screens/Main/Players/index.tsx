@@ -52,12 +52,12 @@ const Players: React.FC = () => {
 
   return (
     <Flex flexDir="column" w="100%" h="100%">
-      <Box h="10%" d="flex" justifyContent="center" alignItems="center">
+      <Box h="15%" d="flex" justifyContent="center" alignItems="center">
         <Heading as="h1" color="white" fontWeight="400" fontSize="23px">
           JUGADORES
         </Heading>
       </Box>
-      <Box h="90%" borderRadius="20px" p="10px">
+      <Box h="85%" borderRadius="20px" p="10px">
         <Box w="100%" h="100%">
           <Box
             h="20%"

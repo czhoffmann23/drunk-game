@@ -113,7 +113,11 @@ const RollDice: React.FC = () => {
         <Text mt="10px" fontSize="18px" color="white">
           Es el turno de
         </Text>
-        <Heading textTransform="uppercase" fontSize="30px" color="white">
+        <Heading
+          textTransform="uppercase"
+          fontSize="30px"
+          mt="10px"
+          color="white">
           {players && players[round] && players[round].name}
         </Heading>
       </Box>
