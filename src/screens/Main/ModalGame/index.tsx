@@ -15,24 +15,12 @@ import {
 import { Fire as FireIcon } from 'assets/svg'
 import { useGame } from 'providers/Game'
 
-type Game = {
-  active: boolean
-  name: string
-  desc: string
-  dice: boolean
-  type: number
-  random: string[]
-}
-
-type ModalGameProps = {
-  game: Game | undefined
-  isOpen: boolean
-  onClose: () => void
-}
+import { ModalGameProps } from './types'
 
 const ModalGame: React.FC<ModalGameProps> = ({ game, isOpen, onClose }) => {
-  const { players, round, setDices } = useGame()
   const theme = useTheme()
+  const { players, round, setDices } = useGame()
+  const txtC = theme.colors.white.normal
   const [getRandom, setGetRandom] = useState<string>('')
   const [loading, setLoading] = useState<boolean>(false)
   const bgColor =
@@ -66,6 +54,41 @@ const ModalGame: React.FC<ModalGameProps> = ({ game, isOpen, onClose }) => {
     }
   }, [game])
 
+  const renderContentBody = () => {
+    if (loading) return <Spinner size="xl" color="purple" />
+
+    return (
+      <>
+        {renderIcon()}
+        <Heading
+          mt="5px"
+          as="h1"
+          textTransform="uppercase"
+          fontSize={{ base: '20px', md: '30px' }}
+          textAlign="center"
+          color={txtC}>
+          {game && game.name}
+        </Heading>
+        <Text mt="10px" fontSize="20px" textAlign="center" color={txtColor}>
+          {game && game.desc}
+        </Text>
+        {getRandom !== '' && (
+          <>
+            <br />
+            <Text
+              mt="20px"
+              color={txtColor}
+              fontSize="20px"
+              fontWeight="bold"
+              textAlign="center">
+              {game && game.random.length > 0 && getRandom}
+            </Text>
+          </>
+        )}
+      </>
+    )
+  }
+
   return (
     <Modal
       closeOnOverlayClick={false}
@@ -88,45 +111,10 @@ const ModalGame: React.FC<ModalGameProps> = ({ game, isOpen, onClose }) => {
               mb="20px"
               fontSize={{ base: '20px', md: '30px' }}
               textAlign="center"
-              color="white">
+              color={txtC}>
               {players && players[round] && `🔥 ${players[round].name} 🔥`}
             </Heading>
-            {loading ? (
-              <Spinner size="xl" color="purple" />
-            ) : (
-              <>
-                {renderIcon()}
-                <Heading
-                  mt="5px"
-                  as="h1"
-                  textTransform="uppercase"
-                  fontSize={{ base: '20px', md: '30px' }}
-                  textAlign="center"
-                  color="white">
-                  {game && game.name}
-                </Heading>
-                <Text
-                  mt="10px"
-                  fontSize="20px"
-                  textAlign="center"
-                  color={txtColor}>
-                  {game && game.desc}
-                </Text>
-                {getRandom !== '' && (
-                  <>
-                    <br />
-                    <Text
-                      mt="20px"
-                      color={txtColor}
-                      fontSize="20px"
-                      fontWeight="bold"
-                      textAlign="center">
-                      {game && game.random.length > 0 && getRandom}
-                    </Text>
-                  </>
-                )}
-              </>
-            )}
+            {renderContentBody()}
           </Box>
         </ModalBody>
         <ModalFooter d="flex" justifyContent="center" alignItems="center">

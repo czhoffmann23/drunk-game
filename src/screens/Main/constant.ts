@@ -240,7 +240,7 @@ const BOARD_1 = [
     },
     {
       name: 'Celular 📞',
-      desc: 'Los jugadores con celulares de esta marca debera beber:',
+      desc: 'Los jugadores con celulares de esta marca deberan beber:',
       dice: false,
       type: 4,
       active: false,

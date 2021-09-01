@@ -14,12 +14,20 @@ const theme = extendTheme({
     blue: {
       normal: '#2D2851',
       lighter: '#341E64',
+      darker: '#2E1F55',
     },
     green: {
       normal: '#49D88B',
     },
     orange: {
       normal: '#FCAF3D',
+    },
+    pink: {
+      normal: '#FF7888',
+      darker: '#EC5566',
+    },
+    white: {
+      normal: 'white',
     },
   },
   scroll: {

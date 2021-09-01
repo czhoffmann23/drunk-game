@@ -6,6 +6,7 @@ import {
   Heading,
   Spinner,
   Text,
+  useTheme,
   useToast,
 } from '@chakra-ui/react'
 import {
@@ -20,6 +21,10 @@ import {
 import { useGame } from 'providers/Game'
 
 const RollDice: React.FC = () => {
+  const theme = useTheme()
+  const bgC = theme.colors.pink.normal
+  const bgIC = theme.colors.pink.darker
+  const txtC = theme.colors.white.normal
   const { dices, setDices, players, round } = useGame()
   const toast = useToast()
 
@@ -84,82 +89,84 @@ const RollDice: React.FC = () => {
         </>
       )
     return (
-      <Text fontSize="13px" color="white">
+      <Text fontSize="13px" color={txtC}>
         Por favor tira los dados
       </Text>
     )
   }
 
   return (
-    <Flex flexDir="column" w="100%" h="100%">
-      <Box
-        flex="1"
-        d="flex"
-        flexDir="column"
-        justifyContent="center"
-        alignItems="center">
-        <Box d="flex" justifyContent="center" alignItems="center">
-          <BeersIcon w="55px" h="55px" />
+    <Box h={{ base: '100%', sm: '50%' }} m="10px" flex="1" p="10px">
+      <Flex flexDir="column" w="100%" h="100%">
+        <Box
+          flex="1"
+          d="flex"
+          flexDir="column"
+          justifyContent="center"
+          alignItems="center">
+          <Box d="flex" justifyContent="center" alignItems="center">
+            <BeersIcon w="55px" h="55px" />
+            <Heading
+              as="h1"
+              ml="8px"
+              textTransform="uppercase"
+              fontSize="25px"
+              color={txtC}>
+              BAFU GAME
+            </Heading>
+          </Box>
+
+          <Text mt="10px" fontSize="18px" color={txtC}>
+            Es el turno de
+          </Text>
           <Heading
-            as="h1"
-            ml="8px"
             textTransform="uppercase"
-            fontSize="25px"
-            color="white">
-            BAFU GAME
+            fontSize="30px"
+            mt="10px"
+            color={txtC}>
+            {players && players[round] && players[round].name}
           </Heading>
         </Box>
-
-        <Text mt="10px" fontSize="18px" color="white">
-          Es el turno de
-        </Text>
-        <Heading
-          textTransform="uppercase"
-          fontSize="30px"
-          mt="10px"
-          color="white">
-          {players && players[round] && players[round].name}
-        </Heading>
-      </Box>
-      <Box
-        flex="4"
-        p="10px 0"
-        d="flex"
-        justifyContent="center"
-        alignItems="center">
         <Box
-          w="100%"
-          h="95%"
-          minH="90px"
-          m="10px 0"
-          borderRadius="20px"
-          bg="#FF7888"
+          flex="4"
+          p="10px 0"
           d="flex"
           justifyContent="center"
           alignItems="center">
           <Box
-            w="90%"
-            h="90%"
+            w="100%"
+            h="95%"
+            minH="90px"
+            m="10px 0"
             borderRadius="20px"
-            bg="linear-gradient(180deg, #EC5566 0%, rgba(255, 120, 136, 0) 100%);"
-            filter="drop-shadow(0px 4px 24px rgba(149, 120, 223, 0.2))"
+            bg={bgC}
             d="flex"
             justifyContent="center"
             alignItems="center">
-            {renderDices()}
+            <Box
+              w="90%"
+              h="90%"
+              borderRadius="20px"
+              bg={`linear-gradient(180deg, ${bgIC} 0%, rgba(255, 120, 136, 0) 100%);`}
+              filter="drop-shadow(0px 4px 24px rgba(149, 120, 223, 0.2))"
+              d="flex"
+              justifyContent="center"
+              alignItems="center">
+              {renderDices()}
+            </Box>
           </Box>
         </Box>
-      </Box>
-      <Box flex="1" d="flex" justifyContent="center" alignItems="center">
-        <Button
-          w="100%"
-          onClick={onRollTheDice}
-          colorScheme="whatsapp"
-          variant="solid">
-          Tira los dados
-        </Button>
-      </Box>
-    </Flex>
+        <Box flex="1" d="flex" justifyContent="center" alignItems="center">
+          <Button
+            w="100%"
+            onClick={onRollTheDice}
+            colorScheme="whatsapp"
+            variant="solid">
+            Tira los dados
+          </Button>
+        </Box>
+      </Flex>
+    </Box>
   )
 }
 

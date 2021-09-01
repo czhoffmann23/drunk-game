@@ -1,7 +1,14 @@
 import { useEffect, useState } from 'react'
-import { Box, Flex, Heading, Slide, Text } from '@chakra-ui/react'
+import { Flex } from '@chakra-ui/react'
 import { useGame } from 'providers/Game'
-import { Board, ModalGame, Players, RollDice } from 'screens/Main'
+import {
+  Authors,
+  Board,
+  CurrentPlayerSlide,
+  ModalGame,
+  Players,
+  RollDice,
+} from 'screens/Main'
 import { BOARD_1 } from 'screens/Main/constant'
 
 import { Container } from 'components/Container'
@@ -73,65 +80,28 @@ const Index: React.FC = () => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
 
+  const renderContent = () => {
+    if (loading) return <Loader />
+
+    return (
+      <>
+        <Flex w="100%" h="100%" justifyContent="center" alignItems="center">
+          <Flex flexDir="column" flex="1" h="100%">
+            <RollDice />
+            <Players />
+            <Authors />
+          </Flex>
+          <Board board={board} />
+        </Flex>
+        <ModalGame game={actualGame} isOpen={modal} onClose={onClose} />
+        <CurrentPlayerSlide openSlide={openSlide} />
+      </>
+    )
+  }
+
   return (
     <Container>
-      <>
-        {loading ? (
-          <Loader />
-        ) : (
-          <>
-            <Flex w="100%" h="100%" justifyContent="center" alignItems="center">
-              <Flex flexDir="column" flex="1" h="100%">
-                <Box h={{ base: '100%', sm: '50%' }} m="10px" flex="1" p="10px">
-                  <RollDice />
-                </Box>
-                <Box
-                  bg="#2E1F55"
-                  h={{ base: '100%', sm: '50%' }}
-                  m="10px"
-                  flex="1"
-                  borderRadius="20px"
-                  p="10px">
-                  <Players />
-                </Box>
-                <Box flex="1">
-                  <Text
-                    mt="5px"
-                    fontSize="11px"
-                    textAlign="center"
-                    color="white">
-                    {`By: Pilyclix 👽 Ellalabuscona ⚡ Jellyfish 🌊`}
-                  </Text>
-                </Box>
-              </Flex>
-              <Box
-                d={{ base: 'none', md: 'initial' }}
-                bg="#2E1F55"
-                maxW="100%"
-                h="100%"
-                m="10px"
-                flex="4"
-                borderRadius="20px"
-                p="10px">
-                <Board board={board} />
-              </Box>
-            </Flex>
-            <ModalGame game={actualGame} isOpen={modal} onClose={onClose} />
-            <Slide direction="top" in={openSlide} style={{ zIndex: 10 }}>
-              <Box p="40px" color="white" bg="#FF7888" rounded="md" shadow="md">
-                <Heading
-                  fontSize="30px"
-                  textAlign="center"
-                  textTransform="uppercase">
-                  {players &&
-                    players[round] &&
-                    `es el turno de ${players[round].name}`}
-                </Heading>
-              </Box>
-            </Slide>
-          </>
-        )}
-      </>
+      <>{renderContent()}</>
     </Container>
   )
 }

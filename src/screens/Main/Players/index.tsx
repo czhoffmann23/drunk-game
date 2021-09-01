@@ -13,13 +13,13 @@ import {
 } from '@chakra-ui/react'
 import { useGame } from 'providers/Game'
 
-type Player = {
-  name: string
-}
+import { Player } from './types'
 
 const Players: React.FC = () => {
   const theme = useTheme()
   const { scroll } = theme
+  const bgBox = theme.colors.blue.darker
+  const txtC = theme.colors.white.normal
   const { players, setPlayers, addToLocalStorage } = useGame()
   const [newName, setNewName] = useState<string>('')
 
@@ -51,72 +51,81 @@ const Players: React.FC = () => {
   }
 
   return (
-    <Flex flexDir="column" w="100%" h="100%">
-      <Box h="15%" d="flex" justifyContent="center" alignItems="center">
-        <Heading as="h1" color="white" fontWeight="400" fontSize="23px">
-          JUGADORES
-        </Heading>
-      </Box>
-      <Box h="85%" borderRadius="20px" p="10px">
-        <Box w="100%" h="100%">
-          <Box
-            h="20%"
-            p="5px"
-            d="flex"
-            justifyContent="center"
-            alignItems="center">
-            <InputGroup size="md">
-              <Input
-                placeholder="Nuevo jugador"
-                variant="flushed"
-                color="white"
-                value={newName}
-                onKeyPress={handleOnKeyPress}
-                onChange={onChange}
-              />
-              <InputRightElement width="4.5rem">
-                <Button
-                  size="xs"
-                  colorScheme="purple"
-                  onClick={handleAdd}
-                  leftIcon={<AddIcon />}>
-                  Add
-                </Button>
-              </InputRightElement>
-            </InputGroup>
-          </Box>
-          <Box maxH="80%" p="5px" overflowY="auto" css={scroll}>
-            {players &&
-              players.map((p: Player, index: number) => {
-                return (
-                  <Flex
-                    m="5px"
-                    h="50px"
-                    p="5px"
-                    alignItems="center"
-                    key={`${index + 1}`}
-                    justifyContent="space-between">
-                    <Heading
-                      as="h1"
-                      color="white"
-                      fontSize="18px"
-                      textTransform="uppercase">
-                      {p.name}
-                    </Heading>
-                    <IconButton
-                      colorScheme="purple"
-                      size="xs"
-                      aria-label="Delete"
-                      onClick={() => handleDelete(index)}
-                      icon={<CloseIcon />}
-                    />
-                  </Flex>
-                )
-              })}
+    <Box
+      bg={bgBox}
+      h={{ base: '100%', sm: '50%' }}
+      m="10px"
+      flex="1"
+      borderRadius="20px"
+      p="10px">
+      <Flex flexDir="column" w="100%" h="100%">
+        <Box h="15%" d="flex" justifyContent="center" alignItems="center">
+          <Heading as="h1" color={txtC} fontWeight="400" fontSize="23px">
+            JUGADORES
+          </Heading>
+        </Box>
+        <Box h="85%" borderRadius="20px" p="10px">
+          <Box w="100%" h="100%">
+            <Box
+              h="20%"
+              p="5px"
+              d="flex"
+              justifyContent="center"
+              alignItems="center">
+              <InputGroup size="md">
+                <Input
+                  placeholder="Nuevo jugador"
+                  variant="flushed"
+                  color={txtC}
+                  value={newName}
+                  onKeyPress={handleOnKeyPress}
+                  onChange={onChange}
+                />
+                <InputRightElement width="4.5rem">
+                  <Button
+                    size="xs"
+                    colorScheme="purple"
+                    onClick={handleAdd}
+                    leftIcon={<AddIcon />}>
+                    Add
+                  </Button>
+                </InputRightElement>
+              </InputGroup>
+            </Box>
+            <Box maxH="80%" p="5px" overflowY="auto" css={scroll}>
+              {players &&
+                players.map((p: Player, index: number) => {
+                  return (
+                    <Flex
+                      m="5px"
+                      h="50px"
+                      p="5px"
+                      alignItems="center"
+                      key={`${index + 1}`}
+                      justifyContent="space-between">
+                      <Heading
+                        as="h1"
+                        color={txtC}
+                        noOfLines={1}
+                        fontSize={{ base: '16px', md: '18px' }}
+                        textTransform="uppercase">
+                        {p.name}
+                      </Heading>
+                      <IconButton
+                        colorScheme="purple"
+                        size="xs"
+                        aria-label="Delete"
+                        onClick={() => handleDelete(index)}
+                        icon={<CloseIcon />}
+                      />
+                    </Flex>
+                  )
+                })}
+            </Box>
           </Box>
         </Box>
-      </Box>
-    </Flex>
+      </Flex>
+    </Box>
   )
 }
 
